@@ -1,0 +1,21 @@
+
+.boton{
+    width: 20%
+}
+label{
+    color: white;
+}
+#titulo{
+    color: lightgray;
+    text-align: center;
+    font-size: 25px;
+}
+
+#visor{
+    background-image: url('../../Images/fondo_visor2.jpg'); 
+    border: 5px solid;
+    border-radius: 50px;
+}
+body {
+    background-color: #212529;
+}

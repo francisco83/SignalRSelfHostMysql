@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRSelfHost", "SignalRSelfHost\SignalRSelfHost.csproj", "{E0B0CE60-840D-4238-B963-132E192E4F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptClient", "JavascriptClient\JavascriptClient.csproj", "{6A05D623-3750-4E56-B409-0569EF329F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptClient.Tests", "JavascriptClient.Tests\JavascriptClient.Tests.csproj", "{94B4FEE4-713B-4203-993C-1716A6EACFA5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0B0CE60-840D-4238-B963-132E192E4F4A}.Debug|x86.ActiveCfg = Debug|x86
+		{E0B0CE60-840D-4238-B963-132E192E4F4A}.Debug|x86.Build.0 = Debug|x86
+		{E0B0CE60-840D-4238-B963-132E192E4F4A}.Release|x86.ActiveCfg = Release|x86
+		{E0B0CE60-840D-4238-B963-132E192E4F4A}.Release|x86.Build.0 = Release|x86
+		{6A05D623-3750-4E56-B409-0569EF329F68}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A05D623-3750-4E56-B409-0569EF329F68}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A05D623-3750-4E56-B409-0569EF329F68}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A05D623-3750-4E56-B409-0569EF329F68}.Release|x86.Build.0 = Release|Any CPU
+		{94B4FEE4-713B-4203-993C-1716A6EACFA5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{94B4FEE4-713B-4203-993C-1716A6EACFA5}.Debug|x86.Build.0 = Debug|Any CPU
+		{94B4FEE4-713B-4203-993C-1716A6EACFA5}.Release|x86.ActiveCfg = Release|Any CPU
+		{94B4FEE4-713B-4203-993C-1716A6EACFA5}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

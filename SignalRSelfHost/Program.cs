@@ -7,6 +7,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Net;
 using System.IO;
+using Mono.Data.Sqlite;
+using System.Data;
 
 
 namespace SignalRSelfHost
@@ -21,12 +23,41 @@ namespace SignalRSelfHost
             // See http://msdn.microsoft.com/library/system.net.httplistener.aspx 
             // for more information.
             string url = "http://localhost:8888";
+            /*
+            const string connectionString = "URI=file:dbPanelControl.db";
+            IDbConnection dbcon = new SqliteConnection(connectionString);
+            dbcon.Open();
+
+            IDbCommand dbcmd = dbcon.CreateCommand();
+
+            const string sql =
+               "SELECT temperatura, humedad " +
+               "FROM registros";
+            dbcmd.CommandText = sql;
+            IDataReader reader = dbcmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string temperatura = reader.GetFloat(0).ToString();
+                string humedad = reader.GetFloat(1).ToString();
+                Console.WriteLine("Name: {0} {1}",
+                    temperatura, humedad);
+            }
+            // clean up
+            reader.Dispose();
+            dbcmd.Dispose();
+            dbcon.Close();
+            */
 
             using (WebApp.Start(url))
             {
                 Console.WriteLine("Server running on {0}", url);
                 Console.ReadLine();
+                SqliteConnection.CreateFile("MyDatabase.sqlite");
             }
+
+
+
+
         }
     }
 
@@ -37,11 +68,16 @@ namespace SignalRSelfHost
         Socket clientsock;
         byte[] MsgRecvBuff = new byte[1024];
 
+        const string connectionString = "URI=file:dbPanelControl.db";
+        IDbConnection dbcon = new SqliteConnection(connectionString);
+        string sql = "";
+        string[] sql_aux;
+
+
         public void Configuration(IAppBuilder app)
         {
             app.UseCors(CorsOptions.AllowAll);
             app.MapSignalR();
-
 
             string strIP;
             string strport;
@@ -125,8 +161,35 @@ namespace SignalRSelfHost
 
                     Console.WriteLine("Dato recibido:" + MsgRecvStr + "\n");
 
+
                     //Seteo la temperatura
                     a.SetTemp(MsgRecvStr);
+
+                    //Guardo en base de datos los registros
+                    dbcon.Open();
+
+                    IDbCommand dbcmd = dbcon.CreateCommand();
+
+                    /*sql =
+                       "SELECT temperatura, humedad " +
+                       "FROM registros";*/
+                    sql_aux = MsgRecvStr.Split(' ');
+                    sql = "INSERT INTO registros (fecha,temperatura,humedad,luminosidad,voltspanel,voltsbateria)" +
+                        "VALUES('" + DateTime.Now.ToString() + "'," + sql_aux[0] + "," + sql_aux[1] + "," + sql_aux[2] + "," + sql_aux[3] + "," + 0 + ")";                       
+                    dbcmd.CommandText = sql;
+                    IDataReader reader = dbcmd.ExecuteReader();
+                    /*while (reader.Read())
+                    {
+                        string temperatura = reader.GetFloat(0).ToString();
+                        string humedad = reader.GetFloat(1).ToString();
+                        Console.WriteLine("Valores: {0} {1}",
+                            temperatura, humedad);
+                    }*/
+                    // clean up
+                    reader.Dispose();
+                    dbcmd.Dispose();
+                    dbcon.Close();
+
 
                     // The socket can continuedly wait the receive message because of this function 
                     clientsock.BeginReceive(MsgRecvBuff, 0, MsgRecvBuff.Length, SocketFlags.None, new AsyncCallback(CallBack_ReceiveMsg), clientsock);

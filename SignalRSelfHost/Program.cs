@@ -23,6 +23,7 @@ namespace SignalRSelfHost
             // See http://msdn.microsoft.com/library/system.net.httplistener.aspx 
             // for more information.
             string url = "http://localhost:8888";
+
             /*
             const string connectionString = "URI=file:dbPanelControl.db";
             IDbConnection dbcon = new SqliteConnection(connectionString);
@@ -72,7 +73,6 @@ namespace SignalRSelfHost
         IDbConnection dbcon = new SqliteConnection(connectionString);
         string sql = "";
         string[] sql_aux;
-
 
         public void Configuration(IAppBuilder app)
         {

@@ -347,6 +347,60 @@ if (lienzo && lienzo.getContext) {
                     console.log("temp/Humedad ->", Temp);
                 });
             });
-});</script>
+});
+
+
+$('#fdesde').datepicker({
+            uiLibrary: 'bootstrap4',
+            locale: 'es-es',
+});
+
+</script>
+
+<div class="container" style="border: 1px solid darkgray; border-radius: 10px; padding-top: 10px; padding-bottom:10px;">
+    <div class="row">
+        <div class=col-md-3><label>Fecha Desde: </label><input type="text" id="fdesde" class="input-group"/></div>
+        <div class=col-md-3><label>Fecha Hasta: </label><input type="text" id="fhasta" class="input-group" /></div>
+        <br />
+        <div class=col-md-3><input  class ="btn btn-primary" type="button" id="buscar" value="Buscar"/></div>
+    </div>
+    <br />
+    <div class="row">
+        <div class=col-md-12>
+            <table class="table table-hover" style="color: black;" >
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Temperatura</th>
+                    <th scope="col">Humedad</th>
+                    <th scope="col">Voltaje Panel</th>
+                    <th scope="col">Luminicidad</th>
+                </tr>
+            </thead>
+            <tbody style="background-color:white;">
+                <tr>
+                    <td scope="row">1</td>
+                    <td scope="row">10</td>
+                    <td scope="row">10</td>
+                    <td scope="row">30</td>
+                    <td scope="row">30</td>
+                    <td scope="row">30</td>
+                </tr>
+                <tr>
+                    <td scope="row">2</td>
+                    <td scope="row">30</td>
+                    <td scope="row">200</td>
+                    <td scope="row">30</td>
+                    <td scope="row">30</td>
+                    <td scope="row">30</td>
+                </tr>
+            </tbody>
+                
+        </table>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

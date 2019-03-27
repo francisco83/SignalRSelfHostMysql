@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptClient", "Javascr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptClient.Tests", "JavascriptClient.Tests\JavascriptClient.Tests.csproj", "{94B4FEE4-713B-4203-993C-1716A6EACFA5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Codigo Arduino", "Codigo Arduino", "{8D15A92F-655D-4FA3-9680-ABF990E42E94}"
+	ProjectSection(SolutionItems) = preProject
+		temp_ethernet.ino = temp_ethernet.ino
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86

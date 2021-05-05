@@ -10,6 +10,7 @@ using System.IO;
 using Mono.Data.Sqlite;
 using System.Data;
 
+//se Modifico 
 
 namespace SignalRSelfHost
 {
@@ -22,7 +23,7 @@ namespace SignalRSelfHost
             // use http://*:8080 to bind to all addresses. 
             // See http://msdn.microsoft.com/library/system.net.httplistener.aspx 
             // for more information.
-            string url = "http://localhost:8888";
+            string url = "http://localhost:8880";
 
             /*
             const string connectionString = "URI=file:dbPanelControl.db";
@@ -109,6 +110,7 @@ namespace SignalRSelfHost
             }
             catch (SocketException er)
             {
+                clientsock.Close();
                 // If the socket exception is occurrence, the application display a error message.  
                 Console.WriteLine(er.Message);
             }
@@ -136,6 +138,7 @@ namespace SignalRSelfHost
             }
             catch (SocketException er)
             {
+                clientsock.Close();
                 Console.WriteLine(er.Message);
             }
 
@@ -205,6 +208,7 @@ namespace SignalRSelfHost
             }
             catch (Exception er)
             {
+                clientsock.Close();
                 Console.WriteLine(er.Message);
             }
         }

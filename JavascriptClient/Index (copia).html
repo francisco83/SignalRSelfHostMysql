@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de Control</title>
+    <style type="text/css">
+        .container {
+            /*background-color: #99CCFF;
+            border: thick solid #808080;
+            padding: 20px;
+            margin: 20px;*/
+        }
+    </style>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Panel de comandos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../Content/Css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../Content/Css/jquery-ui.min.css" />
+
+    <link rel="stylesheet" href="../Content/Css/bootstrap.min.css" />
+
+</head>
+<body style="background-color: #212529;">
+    <div class="container">
+        <div class="row" id="titulo">Panel de comandos</div>
+    </div>
+    <div class="container" id="visor" style="background-image: url('../Content/Images/fondo_visor2.jpg');">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <canvas id="ctemperatura" data-type="radial-gauge"
+                        data-width="250"
+                        data-height="250"
+                        data-units="°C"
+                        data-title="Temperatura"
+                        data-min-value="-10"
+                        data-max-value="50"
+                        data-major-ticks="[-10,0,10,20,30,40,50]" ,
+                        data-color-needle-circle-outer-end="#111" ,
+                        data-highlights='[ {"from": -10, "to": 0, "color": "rgba(0,0, 255)"},
+                                {"from": 38, "to": 50, "color": "rgba(255, 0, 0)"} ]'
+                        data-color-border-outer-end="#111"
+                        data-color-border-middle="#222"
+                        data-color-border-middle-end="#111"
+                        data-value="20"></canvas>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <canvas id="chumedad" data-type="radial-gauge"
+                        data-width="250"
+                        data-height="250"
+                        data-units="%"
+                        data-title="Humedad"
+                        data-min-value="0"
+                        data-max-value="100"
+                        data-major-ticks="[0,10,20,30,40,50,60,70,80,90,100]"
+                        data-color-border-outer-end="#111"
+                        data-color-border-middle="#222"
+                        data-color-border-middle-end="#111"></canvas>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <canvas id="cvoltajepanel" data-type="radial-gauge"
+                        data-width="250"
+                        data-height="250"
+                        data-units="Volts"
+                        data-title="Voltaje Panel"
+                        data-min-value="0"
+                        data-max-value="20"
+                        data-major-ticks="[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19,20]"
+                        data-minor-ticks="2"
+                        data-stroke-ticks="true"
+                        data-highlights='[
+                                                {"from": 14, "to": 20, "color": "rgba(255, 0, 0)"} ]'
+                        data-ticks-angle="225"
+                        data-start-angle="67.5"
+                        data-color-major-ticks="#ddd"
+                        data-color-minor-ticks="#ddd"
+                        data-color-title="#eee"
+                        data-color-units="#ccc"
+                        data-color-numbers="#eee"
+                        data-color-plate="#222"
+                        data-border-shadow-width="0"
+                        data-borders="true"
+                        data-needle-type="arrow"
+                        data-needle-width="2"
+                        data-needle-circle-size="7"
+                        data-needle-circle-outer="true"
+                        data-needle-circle-inner="false"
+                        data-animation-duration="1500"
+                        data-animation-rule="linear"
+                        data-color-border-outer="#333"
+                        data-color-border-outer-end="#111"
+                        data-color-border-middle="#222"
+                        data-color-border-middle-end="#111"
+                        data-color-border-inner="#111"
+                        data-color-border-inner-end="#333"
+                        data-color-needle-shadow-down="#333"
+                        data-color-needle-circle-outer="#333"
+                        data-color-needle-circle-outer-end="#111"
+                        data-color-needle-circle-inner="#111"
+                        data-color-needle-circle-inner-end="#222"
+                        data-value-box-border-radius="0"
+                        data-color-value-box-rect="#222"
+                        data-color-value-box-rect-end="#333"></canvas>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <canvas data-type="radial-gauge"
+                        data-width="250"
+                        data-height="250"
+                        data-units="Volts"
+                        data-title="Voltaje Batería"
+                        data-min-value="0"
+                        data-max-value="14"
+                        data-major-ticks="[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]"
+                        data-minor-ticks="2"
+                        data-stroke-ticks="true"
+                        data-highlights='[
+                                            {"from": 12, "to": 14, "color": "rgba(255, 0, 0)"} ]'
+                        data-ticks-angle="225"
+                        data-start-angle="67.5"
+                        data-color-major-ticks="#ddd"
+                        data-color-minor-ticks="#ddd"
+                        data-color-title="#eee"
+                        data-color-units="#ccc"
+                        data-color-numbers="#eee"
+                        data-color-plate="#222"
+                        data-border-shadow-width="0"
+                        data-borders="true"
+                        data-needle-type="arrow"
+                        data-needle-width="2"
+                        data-needle-circle-size="7"
+                        data-needle-circle-outer="true"
+                        data-needle-circle-inner="false"
+                        data-animation-duration="1500"
+                        data-animation-rule="linear"
+                        data-color-border-outer="#333"
+                        data-color-border-outer-end="#111"
+                        data-color-border-middle="#222"
+                        data-color-border-middle-end="#111"
+                        data-color-border-inner="#111"
+                        data-color-border-inner-end="#333"
+                        data-color-needle-shadow-down="#333"
+                        data-color-needle-circle-outer="#333"
+                        data-color-needle-circle-outer-end="#111"
+                        data-color-needle-circle-inner="#111"
+                        data-color-needle-circle-inner-end="#222"
+                        data-value-box-border-radius="0"
+                        data-color-value-box-rect="#222"
+                        data-color-value-box-rect-end="#333"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="botonera" style="margin-top: 10px">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Luces delanteras</label>
+                    </div>
+                    <div class="col-md-9">
+                        <img id="boton1" class="boton" src="../Content/Images/a11.png" onclick="cambiar('boton1')">
+                    </div>
+                    <div class="col-md-3">
+                        <label>luces del fondo</label>
+                    </div>
+                    <div class="col-md-9">
+                        <img id="boton2" class="boton" src="./Content/Images/a11.png" onclick="cambiar('boton2')">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Luces laterales</label>
+                    </div>
+                    <div class="col-md-9">
+                        <img id="boton3" class="boton" src="./Content/Images/a11.png" onclick="cambiar('boton3')">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Bombra de agua</label>
+                    </div>
+                    <div class="col-md-9">
+                        <img id="boton4" class="boton" src="./Content/Images/a22.png" onclick="cambiar('boton4')">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Ventiladores</label>
+                    </div>
+                    <div class="col-md-9">
+                        <img id="boton5" class="boton" src="./Content/Images/a11.png" onclick="cambiar('boton5')">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Alarma</label>
+                    </div>
+                    <div class="col-md-9">
+                        <img id="boton6" class="boton" src="./Content/Images/a22.png" onclick="cambiar('boton6')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="botonera" style="margin-top: 20px">
+        <div class="row">
+            <div class="col-sm-6">
+                <canvas data-type="linear-gauge"
+                        data-width="200"
+                        data-height="400"
+                        data-units="dm3"
+                        data-title="Tanque agua"
+                        data-min-value="0"
+                        data-max-value="1100"
+                        data-major-ticks="0,100,200,300,400,500,600,700,800,900,1000,1100"
+                        data-minor-ticks="5"
+                        data-stroke-ticks="true"
+                        data-highlights='[ {"from": 0, "to": 200, "color": "rgba(255, 0, 0)"} ]'
+                        data-color-plate="#fff"
+                        data-border-shadow-width="0"
+                        data-borders="true"
+                        data-needle-type="arrow"
+                        data-needle-width="2"
+                        data-animation-duration="1500"
+                        data-animation-rule="linear"
+                        data-tick-side="left"
+                        data-number-side="left"
+                        data-needle-side="left"
+                        data-bar-stroke-width="7"
+                        data-bar-begin-circle="false"
+                        data-border-radius="10"
+                        data-value="500"
+                        data-color-border-outer-end="#111"
+                        data-color-border-middle="#222"
+                        data-color-border-middle-end="#111"></canvas>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Iluminación</span>
+                    </div>
+                    <input id="ciluminacion" type="text" class=form-control />
+                    <canvas id="lienzo" width="80" height="80"></canvas>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Riego Jardín</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Minutos">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Iniciar</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Riego Patio</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Minutos">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Iniciar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var i = 0;
+        function cambiar(elemento) {
+            if (i == 0) {
+                document.getElementById(elemento).src = "../Content/Images/a11.png";
+                i = 1;
+            }
+            else {
+                document.getElementById(elemento).src = "../Content/Images/a22.png";
+                i = 0;
+            }
+        }
+
+        //Dibujo circulo
+        var lienzo = document.getElementById("lienzo");
+        if (lienzo && lienzo.getContext) {
+            var contexto = lienzo.getContext("2d");
+            if (contexto) {
+                var X = lienzo.width / 2;
+                var Y = lienzo.height / 2;
+                var r = 30;
+                contexto.strokeStyle = "gray";
+                contexto.fillStyle = "RGB(0,0,0)";
+                contexto.lineWidth = 5;
+                contexto.arc(X, Y, r, 0, 2 * Math.PI);
+                contexto.fill();
+                contexto.stroke();
+            }
+        }</script>
+
+    <div id="cont" style="font-size:100px; color:red; text-align:center">0</div>
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+    <script src="/Scripts/jquery-1.6.4.min.js"></script>
+    <!--Reference the SignalR library. -->
+    <script src="../Scripts/jquery.signalR-2.4.0.min.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="http://localhost:8888/signalr/hubs"></script>
+    <!--Add script to update the page and send messages.-->
+    <script type="text/javascript">
+        $(function () {
+            $.connection.hub.url = "http://localhost:8888/signalr";
+            var num = $.connection.stockTickerMini;
+            var res = "";
+            console.log("num", num);
+            num.client.addNewMessageToPage = function (temp) {
+
+                res = temp.split(" ");
+                console.log("Temperatura:", res[0]);
+                console.log("Humedad:", res[1]);
+                console.log("Iluminación:", res[2]);
+                console.log("Voltaje Panel:", res[3]);
+
+                $('#cont').html("")
+                $('#cont').append(res[0] + " | " + res[1] + " | " + res[2]);
+                $('#ctemperatura').attr('data-value', res[0]);
+                $('#chumedad').attr('data-value', res[1]);
+                $('#cvoltajepanel').attr('data-value', res[3]);
+                $('#ciluminacion').val(res[2]);
+                var a = lienzo.getContext("2d");
+
+                if (res[2] == '0') {
+                    a.fillStyle = 'rgb(0, 0, 0)';
+                }
+                else {
+                    a.fillStyle = 'rgb(255,' + 255 + ',' + res[2] + ')';
+                }
+                contexto.strokeStyle = "gray";
+                a.fill();
+            };
+            // Start the connection.
+            $.connection.hub.start().done(function () {
+
+                //el llamado a la funcion debe estar en minusculas y en el otro con mayusculas
+                num.server.getTemp().done(function (Temp) {
+                    console.log("temp/Humedad ->", Temp);
+                });
+            });
+        });
+
+        /*
+        $('#fdesde').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    locale: 'es-es',
+        });*/
+    </script>
+
+    <div class="container" style="border: 1px solid darkgray; border-radius: 10px; padding-top: 10px; padding-bottom:10px;">
+        <div class="row">
+            <div class=col-md-3><label>Fecha Desde: </label><input type="text"  id="fdesde" /></div>
+            <div class=col-md-3><label>Fecha Hasta: </label><input type="text" id="fhasta" class="input-group" /></div>
+            <br />
+            <div class=col-md-3><input class="btn btn-primary" type="button" id="buscar" value="Buscar" /></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class=col-md-12>
+                <table class="table table-hover" style="color: black;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Temperatura</th>
+                            <th scope="col">Humedad</th>
+                            <th scope="col">Voltaje Panel</th>
+                            <th scope="col">Luminicidad</th>
+                        </tr>
+                    </thead>
+                    <tbody style="background-color:white;">
+                        <tr>
+                            <td scope="row">1</td>
+                            <td scope="row">10</td>
+                            <td scope="row">10</td>
+                            <td scope="row">30</td>
+                            <td scope="row">30</td>
+                            <td scope="row">30</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2</td>
+                            <td scope="row">30</td>
+                            <td scope="row">200</td>
+                            <td scope="row">30</td>
+                            <td scope="row">30</td>
+                            <td scope="row">30</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+   
+    <script src="Scripts/quill.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/gauge.min.js"></script>
+
+    <script>
+
+        $(function () {
+            $("#fdesde").datepicker(
+                { dateFormat: "d/mm/yy" });
+        });
+
+        $(function () {
+            $("#fhasta").datepicker(
+                { dateFormat: "d/mm/yy"});
+        });
+
+
+
+
+    </script>
+
+    
+</body>
+</html >

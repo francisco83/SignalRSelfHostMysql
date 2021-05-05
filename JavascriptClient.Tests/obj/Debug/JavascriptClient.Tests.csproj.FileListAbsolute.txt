@@ -1,0 +1,7 @@
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/bin/Debug/JavascriptClient.dll
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/bin/Debug/nunit.framework.dll
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/bin/Debug/JavascriptClient.pdb
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/bin/Debug/nunit.framework.xml
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/obj/Debug/JavascriptClient.Tests.csprojAssemblyReference.cache
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/obj/Debug/JavascriptClient.Tests.dll
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient.Tests/obj/Debug/JavascriptClient.Tests.pdb

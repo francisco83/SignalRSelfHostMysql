@@ -1,0 +1,11 @@
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient/bin/JavascriptClient.dll
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient/bin/JavascriptClient.pdb
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient/obj/Debug/JavascriptClient.csprojAssemblyReference.cache
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient/obj/Debug/JavascriptClient.dll
+/Users/fran/Projects/SignalRSelfHost/JavascriptClient/obj/Debug/JavascriptClient.pdb
+/Users/fran/Projects/SignalRSelfHostMysql/JavascriptClient/bin/JavascriptClient.dll
+/Users/fran/Projects/SignalRSelfHostMysql/JavascriptClient/bin/JavascriptClient.pdb
+/Users/fran/Projects/SignalRSelfHostMysql/JavascriptClient/obj/Debug/JavascriptClient.csprojAssemblyReference.cache
+/Users/fran/Projects/SignalRSelfHostMysql/JavascriptClient/obj/Debug/JavascriptClient.dll
+/Users/fran/Projects/SignalRSelfHostMysql/JavascriptClient/obj/Debug/JavascriptClient.pdb
+/Users/fran/Projects/SignalRSelfHostMysql/JavascriptClient/obj/Debug/JavascriptClient.csproj.CoreCompileInputs.cache
